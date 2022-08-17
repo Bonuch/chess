@@ -1,0 +1,23 @@
+.custom-v-calendar {
+  &.vc-container {
+    .vc-title {
+      font-size: 14px;
+      line-height: 28px;
+      color: #4a4a4a;
+      font-weight: 400;
+    }
+
+    .vc-weekday {
+      color: #FF9A19;
+      font-weight: 400;
+    }
+
+    .vc-day-content {
+      color: #4a4a4a;
+
+      &.is-disabled {
+        color: #aeaeae;
+      }
+    }
+  }
+}

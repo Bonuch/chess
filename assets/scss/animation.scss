@@ -1,0 +1,324 @@
+.btn-anim-scale {
+    transition: all 0.15s ease-in-out;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+.btn-anim-scale-big {
+    transition: all 0.2s !important;
+    &:hover {
+        transition: all 0.2s !important;
+        transform: scale(1.10) !important;
+    }
+}
+.chess-animation {
+    animation: chessScale 10s linear infinite;
+}
+.symbol-animation {
+    animation: symbolSpin 6.3s ease-out infinite;
+    transform-origin: right;
+}
+.circle-animation {
+    animation: circleSpin 6.3s ease-in-out infinite;
+}
+[data-aos="scale-fade"] {
+    opacity: 0;
+    transform: scale(0.9);
+    &.aos-animate {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+[data-aos="scale-fade-btn"] {
+    opacity: 0;
+    &.aos-animate {
+        animation: bigBounce .3s forwards linear .45s;
+    }
+}
+[data-aos="up-fade"] {
+    opacity: 0;
+    transform: translateY(10px);
+    &.aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+[data-aos="fade-down"] {
+    opacity: 0;
+    transform: translateY(-30px);
+    &.aos-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+[data-aos="opacity-fade"] {
+    opacity: 0;
+    &.aos-animate {
+        opacity: 0.6;
+    }
+}
+[data-aos="bouncing-zoom-card-1"] {
+    opacity: 1;
+    transform: scale(0.90);
+    &.aos-animate {
+        animation: bounceOnce 0.6s ease-in forwards 0.1s;
+    }
+}
+[data-aos="bouncing-zoom-card-2"] {
+    opacity: 1;
+    transform: scale(0.90);
+    &.aos-animate {
+        animation: bounceOnce 0.6s ease-in forwards 0.2s;
+    }
+}
+[data-aos="bouncing-zoom-1"] {
+    opacity: 0;
+    &.aos-animate {
+        animation: bounce 0.4s ease-in forwards .5s;
+    }
+}
+[data-aos="bouncing-zoom-2"] {
+    opacity: 0;
+    &.aos-animate {
+        animation: bounce 0.4s ease-in forwards .65s;
+    }
+}
+[data-aos="bouncing-zoom-3"] {
+    opacity: 0;
+    &.aos-animate {
+        animation: bounce 0.4s ease-in forwards .8s;
+    }
+}
+[data-aos="zoom-scale-1"] {
+    opacity: 0;
+    &.aos-animate {
+        opacity: 0;
+        animation: zoomScale 1.4s ease-in forwards, 8s promo-spin ease-in-out infinite 1.4s;
+    }
+}
+[data-aos="zoom-scale-2"] {
+    opacity: 0;
+    &.aos-animate {
+        opacity: 0;
+        animation: zoomScaleSec 1.4s ease-in forwards;
+    }
+}
+[data-aos="left-fade"] {
+    opacity: 0;
+    transform: translateX(10px);
+    &.aos-animate {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes up-fade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes zoomScale {
+    0%, 30% {
+        opacity: 0;
+        transform: scale(0.6) rotate(25deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(10deg);
+    }
+}
+@keyframes zoomScaleSec {
+    0%, 30% {
+        opacity: 0;
+        transform: scale(0.4) rotate(50deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+@keyframes bounce {
+    0% {
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.15);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes bounceOnce {
+    0% {
+        opacity: 1;
+        transform: scale(0.90);
+    }
+    50% {
+        transform: scale(1.01);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes promo-spin {
+    0% {
+        transform: rotate(10deg)
+    }
+    50% {
+        transform: rotate(-6deg)
+    }
+    90% {
+        transform: rotate(10deg)
+    }
+    100% {
+        transform: rotate(10deg)
+    }
+}
+@keyframes chessScale {
+    0% {
+        transform: scale(1);
+    }
+    48% {
+        transform: scale(1.07);
+    }
+    52% {
+        transform: scale(1.07);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes symbolSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    5% {
+        transform: rotate(0deg);
+    }
+    47%, 53% {
+        transform: rotate(-20deg);
+    }
+    95% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes circleSpin {
+    0% {
+        transform: rotate(20deg);
+    }
+    2% {
+        transform: rotate(20deg);
+    }
+    49%, 51% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(20deg);
+    }
+}
+@keyframes bigBounce {
+   from {
+       opacity: 0;
+       transform: scale(0.4);
+   }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes BenefitsScale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes BenefitHat {
+    0% {
+        transform: scale(1);
+    }
+    35% {
+        transform: scale(1.15);
+    }
+    50% {
+        transform: scale(1.12);
+    }
+    65% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes heartBig {
+    0% {
+        transform: rotate(29deg) translate(0);
+    }
+    50% {
+        transform: rotate(29deg) translate(10%, 20%);
+    }
+    100% {
+        transform: rotate(29deg) translate(0);
+    }
+}
+
+@keyframes heartMed {
+    0% {
+        transform: rotate(315deg) translate(0);
+    }
+    50% {
+        transform: rotate(315deg) translate(-10%, 10%);
+    }
+    100% {
+        transform: rotate(315deg) translate(0);
+    }
+}
+
+@keyframes giftScale {
+    0% {
+
+    }
+    15% {
+        transform: scale(1.15) rotate(20deg);
+    }
+    30% {
+        transform: scale(1.15) rotate(-20deg);
+    }
+    45% {
+        transform: scale(1);
+    }
+    100% {
+
+    }
+}
+@keyframes circleScale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.9);
+
+    }
+    95% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,78 @@
+<template>
+    <div class='rating'>
+        <div class='trainer-rating'>
+            <img v-for='iter in 5' :src='getStarImage(iter)' alt='#'>
+        </div>
+        <a v-if='!hideCounter && votes > 0' class='rating-votes' @click.prevent='showReviews'>({{ votes }})
+            <svg class='eye-ico' width='32' height='32' viewBox='0 0 32 32' fill='none'
+                 xmlns='http://www.w3.org/2000/svg'>
+                <path fill-rule='evenodd' clip-rule='evenodd'
+                      d='M15.2665 9.35684C11.3128 9.59075 7.57459 11.7643 4.59794 15.5601C4.08747 16.2111 4 16.3736 4 16.6714C4 16.9523 4.11677 17.166 4.62231 17.81C7.59391 21.5956 11.3361 23.7583 15.2995 23.9803C19.7969 24.2324 24.0523 22.0526 27.4021 17.7811C27.9125 17.1302 28 16.9676 28 16.6698C28 16.3889 27.8832 16.1753 27.3777 15.5312C25.2116 12.7718 22.6327 10.8698 19.7913 9.93599C18.9028 9.64398 17.8263 9.43062 16.9844 9.37956C16.0656 9.32387 15.8675 9.32127 15.2665 9.35684ZM16.9915 11.5977C18.3387 11.8581 19.6333 12.7989 20.3344 14.0274C21.1806 15.5098 21.2699 17.303 20.5729 18.8183C20.3009 19.4096 20.041 19.7942 19.5933 20.268C17.0876 22.9193 12.8185 22.1087 11.3653 18.7056C10.8409 17.4776 10.831 15.9774 11.3389 14.6973C11.8331 13.4519 12.9077 12.3614 14.1282 11.8668C15.0565 11.4906 15.9856 11.4033 16.9915 11.5977ZM15.5078 13.9253C14.7455 14.0946 14.0708 14.5828 13.6844 15.2448C13.4004 15.7314 13.3051 16.0927 13.3083 16.6706C13.3116 17.2282 13.3599 17.4532 13.577 17.9207C13.7765 18.3503 14.3591 18.9467 14.7863 19.1585C16.2905 19.9043 18.0402 19.1457 18.5815 17.5129C18.7364 17.0458 18.7407 16.3135 18.5915 15.8263C18.2508 14.7145 17.2563 13.9397 16.1172 13.8988C15.8852 13.8904 15.6109 13.9024 15.5078 13.9253Z'
+                      fill='#1B3C66' />
+            </svg>
+        </a>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'Rating',
+    props: {
+        rating: {
+            type: Number,
+            required: true,
+        },
+        votes: {
+            type: Number,
+            required: false,
+        },
+        hideCounter: Boolean,
+    },
+    methods: {
+        getStarImage(cnt) {
+            if (cnt <= Math.round(this.rating)) {
+                return '/img/team-page/Star_active.svg';
+            }
+            return '/img/team-page/Star.svg';
+        },
+        showReviews() {
+            this.$emit('showReviews');
+        },
+    },
+};
+</script>
+
+<style lang='scss' scoped>
+.rating {
+    display: flex;
+    align-items: center;
+
+    &.fetched {
+        .eye-ico {
+            path {
+                fill: #D1D8E0;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        margin-top: auto;
+    }
+
+    &-votes {
+        margin-left: 5px;
+        margin-bottom: 20px;
+        font-weight: 400;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+}
+
+.trainer-rating {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+</style>
